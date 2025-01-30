@@ -1,0 +1,213 @@
+.site-header {
+  &.is-fixed-within {
+    margin-bottom: 65px;
+  }
+
+  &__content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--black-color);
+    background-color: var(--white-color);
+
+    &.is-fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+      min-width: 360px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__banner {
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    padding: 8px 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    & img {
+      display: block;
+      width: 80px;
+      height: 45px;
+    }
+  }
+
+  &__burger {
+    @include btn-reset;
+
+    width: 36px;
+    height: 36px;
+    background-color: var(--blue-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='12' viewBox='0 0 17 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9204 6.00023C16.9204 6.13118 16.8647 6.25675 16.7656 6.34934C16.6664 6.44193 16.532 6.49395 16.3918 6.49395H0.888862C0.748692 6.49395 0.614264 6.44193 0.515149 6.34934C0.416034 6.25675 0.360352 6.13118 0.360352 6.00023C0.360352 5.86929 0.416034 5.74372 0.515149 5.65113C0.614264 5.55854 0.748692 5.50652 0.888862 5.50652H16.3918C16.532 5.50652 16.6664 5.55854 16.7656 5.65113C16.8647 5.74372 16.9204 5.86929 16.9204 6.00023ZM0.888862 1.22766H16.3918C16.532 1.22766 16.6664 1.17565 16.7656 1.08306C16.8647 0.990468 16.9204 0.86489 16.9204 0.733949C16.9204 0.603007 16.8647 0.477429 16.7656 0.38484C16.6664 0.29225 16.532 0.240234 16.3918 0.240234H0.888862C0.748692 0.240234 0.614264 0.29225 0.515149 0.38484C0.416034 0.477429 0.360352 0.603007 0.360352 0.733949C0.360352 0.86489 0.416034 0.990468 0.515149 1.08306C0.614264 1.17565 0.748692 1.22766 0.888862 1.22766ZM16.3918 10.7728H0.888862C0.748692 10.7728 0.614264 10.8248 0.515149 10.9174C0.416034 11.01 0.360352 11.1356 0.360352 11.2665C0.360352 11.3975 0.416034 11.523 0.515149 11.6156C0.614264 11.7082 0.748692 11.7602 0.888862 11.7602H16.3918C16.532 11.7602 16.6664 11.7082 16.7656 11.6156C16.8647 11.523 16.9204 11.3975 16.9204 11.2665C16.9204 11.1356 16.8647 11.01 16.7656 10.9174C16.6664 10.8248 16.532 10.7728 16.3918 10.7728Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% auto;
+    border-radius: 10px;
+  }
+
+  &__menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    background-color: transparent;
+    transition: background-color 0.4s ease-in-out;
+
+    &--open {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__cross {
+    @include btn-reset;
+
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.2402 12.2402L23.7602 23.7602M12.2402 23.7602L23.7602 12.2402' stroke='%23110E2C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__menu-content {
+    @include anim(slide-left, 0.4s);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    color: var(--black-color);
+    background-color: var(--white-color);
+    overflow-y: auto;
+    padding: 80px 60px;
+  }
+
+  &__nav {
+    & ul {
+      @include list-reset;
+
+      margin-bottom: 60px;
+    }
+
+    & li {
+      margin-bottom: 40px;
+    }
+
+    & a {
+      color: inherit;
+    }
+  }
+
+  @include media-min ($sm) {
+    &__menu-content {
+      left: auto;
+      width: 370px;
+    }
+  }
+
+  @include media-min ($md) {
+    &.is-fixed-within {
+      margin-bottom: 73px;
+    }
+
+    &__logo {
+      & img {
+        width: 90px;
+        height: 53px;
+      }
+    }
+
+    &__burger {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__cross {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__menu {
+      display: block;
+      position: static;
+      flex-grow: 1;
+
+      &--open {
+        background-color: transparent;
+      }
+    }
+
+    &__menu-content {
+      animation: none;
+      width: auto;
+      padding: 0;
+      overflow: visible;
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__nav {
+      flex-grow: 1;
+
+      & ul {
+        @include list-reset;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 0 20px;
+      }
+
+      & li {
+        margin: 0 15px;
+      }
+
+      & a {
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--blue-color);
+        }
+      }
+    }
+  }
+
+  @include media-min ($fhd) {
+    &.is-fixed-within {
+      margin-bottom: 90px;
+    }
+
+    &__logo {
+      & img {
+        width: 135px;
+        height: 70px;
+      }
+    }
+  }
+
+}

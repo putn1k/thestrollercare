@@ -1,0 +1,45 @@
+.our-gallery {
+  padding-top: 70px;
+  padding-bottom: 35px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__slider-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  @include media-min ($md) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+    &__slider-controls {
+      column-gap: 30px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__slider-controls {
+      column-gap: 40px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    &__top {
+      margin-bottom: 45px;
+    }
+  }
+}

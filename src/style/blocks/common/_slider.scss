@@ -1,0 +1,54 @@
+.slider {
+  --swiper-theme-color: var(--yellow-color);
+
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &:not(.swiper-initialized) {
+    opacity: 0;
+  }
+
+  &__wrapper {
+    box-sizing: border-box;
+  }
+}
+
+.slider-control {
+  @include btn-reset;
+
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  pointer-events: auto;
+
+  &.swiper-button-lock {
+    display: none;
+  }
+
+  & svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  @include media-min ($xl) {
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--cyan-color);
+    }
+
+    & svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.icon-list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -10px;
+  margin-right: -10px;
+
+  &>* {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    & svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__link {
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--cyan-color);
+      }
+    }
+  }
+}

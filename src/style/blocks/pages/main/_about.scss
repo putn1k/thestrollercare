@@ -1,0 +1,70 @@
+.about {
+  padding-top: 70px;
+  padding-bottom: 35px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    @include crop-offset;
+
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & img {
+      @include full-size;
+    }
+  }
+
+  @include media-min ($md) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+    &__img {
+      height: 100%;
+      padding-bottom: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__content {
+      padding-left: 65px;
+    }
+
+    &__title {
+      margin-bottom: 45px;
+    }
+
+    &__descr {
+      margin-bottom: 0;
+    }
+
+    &__img {
+      min-height: 410px;
+    }
+  }
+
+  @include media-min ($xxl) {
+    &__content {
+      padding-left: 105px;
+    }
+
+    &__img {
+      min-height: 590px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}

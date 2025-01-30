@@ -1,0 +1,28 @@
+.title-item {
+  &__top {
+    color: var(--blue-color);
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 10px;
+
+    &--light {
+      color: var(--white-color);
+    }
+  }
+
+  @include media-min ($md) {
+    &__top {
+      font-size: 14px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    &__top {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+  }
+}

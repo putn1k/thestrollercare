@@ -1,0 +1,123 @@
+.step-item {
+  padding: 20px;
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-left: 80px;
+    min-height: 60px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--blue-20-color);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: var(--top);
+      left: var(--left);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--blue-color);
+    }
+
+    &--finish {
+      &::before {
+        background-color: var(--blue-color);
+      }
+
+      &::after {
+        top: 17px;
+        left: 17px;
+        width: 26px;
+        height: 26px;
+        border-radius: 0;
+        background-color: transparent;
+        background-image: url('../img/sprite.svg#check');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__descr {
+    @include crop-offset;
+
+    & h4 {
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--blue-color);
+      margin-bottom: 8px;
+
+      &+* {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  @include media-min ($md) {
+    padding: 30px;
+
+    &__title {
+      &>span {
+        display: inline-block;
+        max-width: 220px;
+      }
+    }
+
+    &__descr {
+      padding-left: 80px;
+
+      & h4 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include media-min ($xl) {
+    display: flex;
+    align-items: flex-start;
+
+    &>* {
+      flex-basis: 100%;
+    }
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__descr {
+      padding-left: 0;
+      align-self: center;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding: 50px;
+
+    &__descr {
+      & h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+
+        &+* {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

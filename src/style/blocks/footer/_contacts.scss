@@ -1,0 +1,212 @@
+.contacts {
+  background-image: linear-gradient(to bottom, var(--white-color) 50%, var(--black-color) 50%);
+
+  &__container {
+    position: relative;
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    border-radius: 10px;
+    padding: 60px 30px;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../img/sprite.svg#ht-star');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    &::before {
+      top: -57px;
+      right: -55px;
+      width: 157px;
+      height: 157px;
+      transform: rotate(-10deg);
+    }
+
+    &::after {
+      bottom: -60px;
+      left: -121px;
+      width: 204px;
+      height: 204px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 1;
+  }
+
+  &__heading-action {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    @include list-reset;
+
+    & li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: currentColor;
+
+    & svg {
+      margin-right: 15px;
+    }
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 10px;
+
+    &>* {
+      transition: opacity .2s ease-in-out;
+    }
+
+    &.is-form-send-success {
+      position: relative;
+
+      &>* {
+        opacity: 0.2;
+      }
+
+      &::before {
+        @include anim(fade-up, 0.4s);
+
+        content: 'Thanks! Message sent successfully!';
+        position: absolute;
+        color: var(--white-color);
+        font-size: 28px;
+        font-weight: 500;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__submit {
+    margin-top: 8px;
+    display: grid;
+    row-gap: 8px;
+  }
+
+  @include media-min ($md) {
+    &__container {
+      &::before {
+        top: -80px;
+        right: -60px;
+        width: 204px;
+        height: 204px;
+      }
+    }
+
+    &__title {
+      max-width: 590px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+
+    &__form {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 590px;
+      margin: 0 auto;
+    }
+
+    &__field {
+      &--lg {
+        grid-row: span 2;
+      }
+    }
+
+    &__submit {
+      margin-top: 0;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__container {
+      padding: 90px 30px;
+
+      &::before {
+        top: -90px;
+        right: -100px;
+        width: 275px;
+        height: 275px;
+      }
+
+      &::after {
+        bottom: -50px;
+        left: -185px;
+        width: 480px;
+        height: 480px;
+      }
+    }
+
+    &__title {
+      transform: translateX(60px);
+    }
+
+    &__link {
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s ease-in-out;
+
+      &:hover {
+        --link-line: currentColor;
+      }
+    }
+
+    &__form {
+      transform: translateX(60px);
+    }
+  }
+
+  @include media-min ($fhd) {
+    &__container {
+      padding: 150px 30px;
+
+      &::before {
+        top: -170px;
+        right: -130px;
+        width: 425px;
+        height: 425px;
+      }
+
+      &::after {
+        bottom: -140px;
+        left: -350px;
+        width: 690px;
+        height: 690px;
+      }
+    }
+
+    &__title {
+      transform: none;
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    &__form {
+      transform: none;
+      max-width: 760px;
+    }
+  }
+}

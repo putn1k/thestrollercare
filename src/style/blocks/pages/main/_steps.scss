@@ -1,0 +1,75 @@
+.steps {
+  padding: 70px 0;
+  color: var(--black-color);
+  background-color: var(--blue-10-color);
+  border-radius: 10px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: grid;
+    row-gap: 10px;
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 10px;
+
+    &:nth-child(odd) {
+      background-color: var(--white-color);
+    }
+
+    &:nth-child(4n + 1) {
+      --top: 23px;
+      --left: 0;
+    }
+
+    &:nth-child(4n + 2) {
+      --top: 0;
+      --left: 23px;
+    }
+
+    &:nth-child(4n + 3) {
+      --top: 23px;
+      --left: 46px;
+    }
+
+    &:nth-child(4n + 4) {
+      --top: 46px;
+      --left: 23px;
+    }
+  }
+
+  @include media-min ($md) {
+    padding: 80px 0;
+  }
+
+  @include media-min ($xxl) {
+    &__container {
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+    &__title {
+      position: sticky;
+      top: 100px;
+      margin-bottom: 0;
+      grid-column: span 3;
+    }
+
+    &__list {
+      grid-column: span 9;
+      row-gap: 30px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding: 100px 0;
+  }
+}

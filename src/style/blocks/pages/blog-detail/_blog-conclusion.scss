@@ -1,0 +1,63 @@
+.blog-conclusion {
+  padding: 60px 0;
+  color: var(--black-color);
+  background-color: var(--blue-10-color);
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    @include crop-offset;
+  }
+
+  @include media-min ($md) {
+    padding: 70px 0;
+  }
+
+  @include media-min ($xl) {
+    padding: 90px 0;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding: 150px 0;
+  }
+}
+
+.blog-link-back {
+  padding-top: 60px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--blue-color);
+
+  @include media-min ($md) {
+    padding-top: 70px;
+    font-size: 14px;
+  }
+
+  @include media-min ($xl) {
+    padding-top: 90px;
+    font-size: 16px;
+
+    & a {
+      transition: color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+
+      &:hover {
+        --link-line: var(--cyan-color);
+
+        color: var(--cyan-color);
+      }
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding-top: 150px;
+  }
+}

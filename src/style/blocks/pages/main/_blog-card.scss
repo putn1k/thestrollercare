@@ -1,0 +1,70 @@
+.blog-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__poster {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+    overflow: hidden;
+    border-radius: 10px;
+    order: 0;
+    margin-bottom: 10px;
+
+    & img {
+      @include full-size;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    padding-left: 30px;
+    order: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 15px;
+      height: 15px;
+      background-color: var(--point-color, var(--blue-color));
+      border-radius: 50%;
+      transition: background-color 0.15s ease-in-out;
+    }
+  }
+
+  &__link {
+    &::after {
+      @include full-size;
+
+      content: '';
+      z-index: 2;
+    }
+  }
+
+  @include media-min ($xl) {
+    &:hover {
+      --point-color: var(--cyan-color);
+
+      color: var(--blue-color);
+    }
+
+    &__poster {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      transition: color 0.15s ease-in-out;
+    }
+  }
+
+}

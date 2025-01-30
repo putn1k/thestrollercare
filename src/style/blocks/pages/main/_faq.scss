@@ -1,0 +1,52 @@
+.faq {
+  padding-top: 70px;
+  padding-bottom: 35px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__item {
+    display: list-item;
+    border-bottom: 1px solid var(--gray-color);
+  }
+
+  @include media-min ($md) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  @include media-min ($xl) {
+    &__container {
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+    &__title {
+      position: sticky;
+      top: 100px;
+      margin-bottom: 0;
+      grid-column: span 3;
+    }
+
+    &__list {
+      grid-column: span 9;
+      row-gap: 30px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,71 @@
+<footer class="site__footer"
+        id="contact-us">
+  @include('contacts.html')
+  <div class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__logo">
+          <a href="page-main.html">
+            <img src="img/sprite.svg#logo-light"
+                 width="80"
+                 height="45"
+                 alt="Stroller & Baby Car Seat Professional Cleaning">
+          </a>
+        </div>
+        <ul class="site-footer__terms">
+          <li><a href="#">Policy Privacy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <nav class="site-footer__nav">
+          @include('../common/sitenav.html')
+        </nav>
+        <section class="site-footer__socials">
+          <h3 class="h3">Follow Us</h3>
+          <ul class="icon-list">
+            <li>
+              <a class="icon-list__link"
+                 href="#">
+                <svg width="22"
+                     height="22"
+                     aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#inst"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-list__link"
+                 href="#">
+                <svg width="22"
+                     height="22"
+                     aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#fb"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="site-footer__subscribe subscribe">
+          <h3 class="h3 subscribe__title">Newsletter Signup </h3>
+          <p class="subscribe__text">Stay updated with our latest news and offers </p>
+          <form class="subscribe__form">
+            <div class="subscribe__field">
+              <input class="form-input"
+                     type="text"
+                     name=""
+                     placeholder="Email">
+            </div>
+            <div class="subscribe__field subscribe__submit">
+              <button class="btn btn-light"
+                      type="submit">Subscribe</button>
+              <label class="form-checkbox">
+                <input type="checkbox">
+                <span>I agree with the <a href="#">Policy Privacy</a></span>
+              </label>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</footer>
+@include('../common/chat-btns.html')

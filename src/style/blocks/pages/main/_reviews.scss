@@ -1,0 +1,98 @@
+.reviews {
+  padding-top: 70px;
+  padding-bottom: 35px;
+
+  &__top {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
+
+  &__title-img {
+    width: 225px;
+    height: 69px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin: 0;
+    padding: 20px;
+    color: var(--black-color);
+    background-color: var(--blue-10-color);
+    border-radius: 10px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__author {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  @include media-min ($md) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+    &__top {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    &__title-img {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+
+    &__author {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  @include media-min ($xl) {
+    &__top {
+      margin-bottom: 40px;
+    }
+
+    &__title-img {
+      margin-right: 50px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 30px;
+    }
+
+    &__text {
+      flex-grow: 1;
+    }
+
+    &__author {
+      margin-top: 36px;
+    }
+  }
+
+  @include media-min ($fhd) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    &__top {
+      margin-bottom: 70px;
+    }
+
+    &__item {
+      padding: 40px;
+    }
+
+    &__author {
+      font-size: 16px;
+    }
+  }
+}

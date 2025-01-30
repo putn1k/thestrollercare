@@ -1,0 +1,77 @@
+<section class="contacts">
+  <div class="container">
+    <div class="contacts__container">
+      <div class="contacts__title title-item">
+        <h2 class="title-item__top title-item__top--light">Contact Us</h2>
+        <div class="h2 contacts__heading-action">Book Now</div>
+        <ul class="contacts__list">
+          <li>
+            <a class="contacts__link"
+               href="tel:+971552114768">
+              <svg width="20"
+                   height="20"
+                   aria-hidden="true">
+                <use xlink:href="img/sprite.svg#phone"></use>
+              </svg>
+              <span>+971 55 211 4768</span>
+            </a>
+          </li>
+          <li>
+            <a class="contacts__link"
+               href="mailto:info@thestrollercare.com">
+              <svg width="20"
+                   height="20"
+                   aria-hidden="true">
+                <use xlink:href="img/sprite.svg#mail"></use>
+              </svg>
+              <span>info@thestrollercare.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <form class="contacts__form"
+            data-validate
+            id="contacts-form">
+        <div class="contacts__field">
+          <input class="form-input"
+                 type="text"
+                 name="name"
+                 placeholder="Name"
+                 required
+                 data-validate="name">
+        </div>
+        <div class="contacts__field">
+          <input class="form-input"
+                 type="email"
+                 name="email"
+                 placeholder="Email"
+                 required
+                 data-validate="email">
+        </div>
+        <div class="contacts__field">
+          <input class="form-input"
+                 type="tel"
+                 name="phone"
+                 placeholder="Phone"
+                 required
+                 data-validate="phone">
+        </div>
+        <div class="contacts__field contacts__field--lg">
+          <textarea class="form-input form-input--area"
+                    name="message"
+                    placeholder="Message"></textarea>
+        </div>
+        <div class="contacts__field contacts__submit">
+          <button class="btn btn-light"
+                  type="submit">Submit</button>
+          <label class="form-checkbox">
+            <input type="checkbox"
+                   required
+                   data-validate="confirm">
+            <span>I agree with the <a href="#">Policy Privacy</a> and <a href="#">Terms of Service</a></span>
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

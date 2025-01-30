@@ -1,0 +1,37 @@
+.btn {
+  @include btn-reset;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 18px 16px;
+  text-transform: uppercase;
+  border-radius: 99em;
+  white-space: nowrap;
+
+  @include media-min($md) {
+    font-size: 14px;
+  }
+
+  @include media-min ($xl) {
+    transition: opacity .15s ease-in-out;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  @include media-min($fhd) {
+    font-size: 16px;
+    padding: 16px 28px;
+  }
+}
+
+.btn-light {
+  background-color: var(--white-color);
+  color: var(--blue-color);
+}

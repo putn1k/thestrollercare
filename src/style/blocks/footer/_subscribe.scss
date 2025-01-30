@@ -1,0 +1,30 @@
+.subscribe {
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 30px;
+    opacity: 0.6;
+  }
+
+  &__form {
+    display: grid;
+    width: 100%;
+    max-width: 255px;
+    row-gap: 10px;
+  }
+
+  &__submit {
+    display: grid;
+    row-gap: 18px;
+  }
+
+  @include media-min ($xl) {
+    &__form {
+      max-width: none;
+    }
+  }
+}
