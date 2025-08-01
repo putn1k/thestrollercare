@@ -24,8 +24,11 @@ const sliderConfig = {
       nextEl: '#gallery-slider [data-to-slide="next"]',
     },
     breakpoints: {
-      1200: {
+      768: {
         slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 4,
       },
     },
   },
